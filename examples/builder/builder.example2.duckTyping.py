@@ -1,4 +1,3 @@
-from abc import ABC, abstractmethod
 
 class Burger:
     def __init__(self):
@@ -13,33 +12,7 @@ class Burger:
         print(f"Bread: {self.bread}, Meat: {self.meat}, Cheese: {self.cheese}, Dressing: {self.dressing}, Lettuce: {self.lettuce}, Tomato: {self.tomato}" )
         
 
-class IBurgerBuilder(ABC):
-      @abstractmethod
-      def add_bread(self):
-          pass
-
-      @abstractmethod
-      def add_meat(self):
-          pass
-
-      @abstractmethod
-      def add_cheese(self):
-          pass
-
-      @abstractmethod
-      def add_lettuce(self):
-          pass
-
-      @abstractmethod
-      def add_tomato(self):
-          pass
-
-      @abstractmethod
-      def get_burger(self):
-          pass
-      
-
-class ClassicBurgerBuilder(IBurgerBuilder):
+class ClassicBurgerBuilder:
     def __init__(self):
         self.burger = Burger()
 
@@ -65,7 +38,7 @@ class ClassicBurgerBuilder(IBurgerBuilder):
         return self.burger    
 
 
-class VeggieBurgerBuilder(IBurgerBuilder):
+class VeggieBurgerBuilder:
     def __init__(self):
         self.burger = Burger()
 
